@@ -1736,16 +1736,12 @@ dialog_command "quit:"
 #Do final script swiftDialog stuff
 #If the failList is empty, this means success
 if [ -z "$failList" ]; then
-    if [ "$silentModeEnabled" = false ]; then
-        present_success_window
-    fi
+    present_success_window
     update_tracker "Baseline" 0
     # We are done!
     cleanup_and_restart 0 "Baseline completed - All items successful."
 else
-    if [ "$silentModeEnabled" = false ]; then
-        present_failure_window
-    fi
+    present_failure_window
     update_tracker "Baseline" 1
     # We are done!
     cleanup_and_restart 0 "Baseline completed - Some items failed."
