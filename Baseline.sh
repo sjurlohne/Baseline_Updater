@@ -1730,6 +1730,13 @@ if [ "$dryRun" = true ]; then
     sleep 5
 fi
 
+dialog_command "title: All items finished"
+dialog_command "message: All items finished successfully"
+dialog_command "progress: complete"
+dialog_command "button1text: Continue …"
+dialog_command "button1: enable"
+wait
+
 #Close our running dialog window
 dialog_command "quit:"
 
